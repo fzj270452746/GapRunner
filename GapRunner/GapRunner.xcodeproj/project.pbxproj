@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28379B772EE83F5000985B34 /* AchievementRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */; };
+		28379B782EE83F5000985B34 /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */; };
+		28379B792EE83F5000985B34 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B732EE83F5000985B34 /* InstructionsViewController.swift */; };
+		28379B7A2EE83F5000985B34 /* AuxiliaryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */; };
+		28379B7B2EE83F5000985B34 /* GapRunnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B712EE83F5000985B34 /* GapRunnerModel.swift */; };
+		28379B7C2EE83F5000985B34 /* GameplayOrchestrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */; };
+		28379B7D2EE83F5000985B34 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6F2EE83F5000985B34 /* EntranceViewController.swift */; };
+		28379C122EE850D600985B34 /* GRoseno.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28379C112EE850D600985B34 /* GRoseno.xcframework */; };
+		2C9E12CC42B72C5FBD51E06D /* Pods_GapRunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C5662D49D9C71569586623 /* Pods_GapRunner.framework */; };
+		FEE23BAB2ED9F3B700432CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */; };
+		FEE23BAD2ED9F3B700432CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA42ED9F3B700432CA8 /* LaunchScreen.storyboard */; };
+		FEE23BAE2ED9F3B700432CA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA62ED9F3B700432CA8 /* Main.storyboard */; };
+		FEE23BB02ED9F3B700432CA8 /* GapRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BA12ED9F3B700432CA8 /* GapRunner.xcdatamodeld */; };
+		FEE23BBE2EDACEE500432CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */; };
+		FEE23BC42EDACEE500432CA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRecordsViewController.swift; sourceTree = "<group>"; };
+		28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxiliaryUtilities.swift; sourceTree = "<group>"; };
+		28379B6F2EE83F5000985B34 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayOrchestrationViewController.swift; sourceTree = "<group>"; };
+		28379B712EE83F5000985B34 /* GapRunnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapRunnerModel.swift; sourceTree = "<group>"; };
+		28379B732EE83F5000985B34 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		28379C112EE850D600985B34 /* GRoseno.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GRoseno.xcframework; sourceTree = "<group>"; };
+		4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.debug.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.debug.xcconfig"; sourceTree = "<group>"; };
+		64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.release.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.release.xcconfig"; sourceTree = "<group>"; };
+		84C5662D49D9C71569586623 /* Pods_GapRunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapRunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE23B842ED9F3AB00432CA8 /* GapRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEE23BA22ED9F3B700432CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE23BA32ED9F3B700432CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEE23BA52ED9F3B700432CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEE23BAA2ED9F3B700432CA8 /* GapRunner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GapRunner.xcdatamodel; sourceTree = "<group>"; };
+		FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEE23B812ED9F3AB00432CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9E12CC42B72C5FBD51E06D /* Pods_GapRunner.framework in Frameworks */,
+				28379C122EE850D600985B34 /* GRoseno.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E3E1A71A0ED011ACD2241FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */,
+				64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		11CE663F7D3B637B1E423C76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C5662D49D9C71569586623 /* Pods_GapRunner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28379B6C2EE83F5000985B34 /* Achieve */ = {
+			isa = PBXGroup;
+			children = (
+				28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */,
+			);
+			path = Achieve;
+			sourceTree = "<group>";
+		};
+		28379B6E2EE83F5000985B34 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */,
+			);
+			path = Aux;
+			sourceTree = "<group>";
+		};
+		28379B722EE83F5000985B34 /* ForGame */ = {
+			isa = PBXGroup;
+			children = (
+				28379B6F2EE83F5000985B34 /* EntranceViewController.swift */,
+				28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */,
+				28379B712EE83F5000985B34 /* GapRunnerModel.swift */,
+			);
+			path = ForGame;
+			sourceTree = "<group>";
+		};
+		28379B742EE83F5000985B34 /* InstructionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				28379B732EE83F5000985B34 /* InstructionsViewController.swift */,
+			);
+			path = InstructionsVC;
+			sourceTree = "<group>";
+		};
+		28379B762EE83F5000985B34 /* ModelSelect */ = {
+			isa = PBXGroup;
+			children = (
+				28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */,
+			);
+			path = ModelSelect;
+			sourceTree = "<group>";
+		};
+		FEE23B7B2ED9F3AB00432CA8 = {
+			isa = PBXGroup;
+			children = (
+				FEE23BA92ED9F3B700432CA8 /* GapRunner */,
+				FEE23B852ED9F3AB00432CA8 /* Products */,
+				0E3E1A71A0ED011ACD2241FF /* Pods */,
+				11CE663F7D3B637B1E423C76 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FEE23B852ED9F3AB00432CA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEE23B842ED9F3AB00432CA8 /* GapRunner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEE23BA92ED9F3B700432CA8 /* GapRunner */ = {
+			isa = PBXGroup;
+			children = (
+				FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */,
+				FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */,
+				28379C112EE850D600985B34 /* GRoseno.xcframework */,
+				28379B6C2EE83F5000985B34 /* Achieve */,
+				28379B6E2EE83F5000985B34 /* Aux */,
+				28379B722EE83F5000985B34 /* ForGame */,
+				28379B742EE83F5000985B34 /* InstructionsVC */,
+				28379B762EE83F5000985B34 /* ModelSelect */,
+				FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */,
+				FEE23BA12ED9F3B700432CA8 /* GapRunner.xcdatamodeld */,
+				FEE23BA22ED9F3B700432CA8 /* Info.plist */,
+				FEE23BA42ED9F3B700432CA8 /* LaunchScreen.storyboard */,
+				FEE23BA62ED9F3B700432CA8 /* Main.storyboard */,
+			);
+			path = GapRunner;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEE23B832ED9F3AB00432CA8 /* GapRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE23B9A2ED9F3AD00432CA8 /* Build configuration list for PBXNativeTarget "GapRunner" */;
+			buildPhases = (
+				4D9B435ECA945050AE28F80B /* [CP] Check Pods Manifest.lock */,
+				FEE23B802ED9F3AB00432CA8 /* Sources */,
+				FEE23B812ED9F3AB00432CA8 /* Frameworks */,
+				FEE23B822ED9F3AB00432CA8 /* Resources */,
+				62C26BBA4D2B6BAFE4747175 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GapRunner;
+			productName = GapRunner;
+			productReference = FEE23B842ED9F3AB00432CA8 /* GapRunner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEE23B7C2ED9F3AB00432CA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					FEE23B832ED9F3AB00432CA8 = {
+						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
+					};
+				};
+			};
+			buildConfigurationList = FEE23B7F2ED9F3AB00432CA8 /* Build configuration list for PBXProject "GapRunner" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEE23B7B2ED9F3AB00432CA8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FEE23B852ED9F3AB00432CA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEE23B832ED9F3AB00432CA8 /* GapRunner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEE23B822ED9F3AB00432CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE23BAB2ED9F3B700432CA8 /* Assets.xcassets in Resources */,
+				FEE23BAD2ED9F3B700432CA8 /* LaunchScreen.storyboard in Resources */,
+				FEE23BAE2ED9F3B700432CA8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D9B435ECA945050AE28F80B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GapRunner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62C26BBA4D2B6BAFE4747175 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GapRunner/Pods-GapRunner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GapRunner/Pods-GapRunner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GapRunner/Pods-GapRunner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEE23B802ED9F3AB00432CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE23BB02ED9F3B700432CA8 /* GapRunner.xcdatamodeld in Sources */,
+				FEE23BBE2EDACEE500432CA8 /* AppDelegate.swift in Sources */,
+				28379B772EE83F5000985B34 /* AchievementRecordsViewController.swift in Sources */,
+				28379B782EE83F5000985B34 /* ModeSelectionViewController.swift in Sources */,
+				28379B792EE83F5000985B34 /* InstructionsViewController.swift in Sources */,
+				28379B7A2EE83F5000985B34 /* AuxiliaryUtilities.swift in Sources */,
+				28379B7B2EE83F5000985B34 /* GapRunnerModel.swift in Sources */,
+				28379B7C2EE83F5000985B34 /* GameplayOrchestrationViewController.swift in Sources */,
+				28379B7D2EE83F5000985B34 /* EntranceViewController.swift in Sources */,
+				FEE23BC42EDACEE500432CA8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FEE23BA42ED9F3B700432CA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEE23BA32ED9F3B700432CA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FEE23BA62ED9F3B700432CA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEE23BA52ED9F3B700432CA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEE23B9B2ED9F3AD00432CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GapRunner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mahjong Gap Runner";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GapRunner.GR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FEE23B9C2ED9F3AD00432CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GapRunner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mahjong Gap Runner";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GapRunner.GR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FEE23B9D2ED9F3AD00432CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEE23B9E2ED9F3AD00432CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEE23B7F2ED9F3AB00432CA8 /* Build configuration list for PBXProject "GapRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE23B9D2ED9F3AD00432CA8 /* Debug */,
+				FEE23B9E2ED9F3AD00432CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE23B9A2ED9F3AD00432CA8 /* Build configuration list for PBXNativeTarget "GapRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE23B9B2ED9F3AD00432CA8 /* Debug */,
+				FEE23B9C2ED9F3AD00432CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FEE23BA12ED9F3B700432CA8 /* GapRunner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FEE23BAA2ED9F3B700432CA8 /* GapRunner.xcdatamodel */,
+			);
+			currentVersion = FEE23BAA2ED9F3B700432CA8 /* GapRunner.xcdatamodel */;
+			path = GapRunner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FEE23B7C2ED9F3AB00432CA8 /* Project object */;
+}
