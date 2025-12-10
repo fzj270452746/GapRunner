@@ -8,7 +8,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.dn.DivideNumber
+        bundle_identifier: com.GapRunner.GR
       vars:
         BUNDLE_ID: $bundle_identifier
         PROJECT_PATH: "GapRunner" #5:工程名称
