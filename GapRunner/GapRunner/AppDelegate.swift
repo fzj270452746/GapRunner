@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  GapRunner
-//
-//  Created by Zhao on 2025/11/28.
-//
 
 import UIKit
 import CoreData

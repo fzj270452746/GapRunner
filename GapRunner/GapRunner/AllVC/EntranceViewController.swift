@@ -1,6 +1,11 @@
-import Alamofire
+//
+//  EntranceViewController.swift
+//  GapRunner
+//
+//  Created by Zhao on 2025/11/28.
+//
+
 import UIKit
-import GRoseno
 
 class EntranceViewController: UIViewController {
     
@@ -28,29 +33,10 @@ class EntranceViewController: UIViewController {
         buttonStackView.addArrangedSubview(viewRecordsButton)
         buttonStackView.addArrangedSubview(instructionsButton)
         view.addSubview(buttonStackView)
-        
-        let ysts = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
-        ysts!.view.tag = 116
-        ysts?.view.frame = UIScreen.main.bounds
-        view.addSubview(ysts!.view)
     }
     
     func configureConstraints() {
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let jdioa = NetworkReachabilityManager()
-        jdioa?.startListening { state in
-            switch state {
-            case .reachable(_):
-                let ass = SpelViewController()
-                ass.view.frame = self.view.frame
-                jdioa?.stopListening()
-            case .notReachable:
-                break
-            case .unknown:
-                break
-            }
-        }
         
         NSLayoutConstraint.activate([
             buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

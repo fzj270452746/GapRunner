@@ -52,7 +52,7 @@ struct GameAchievementRecord: Codable {
     init(score: Int, mode: GameplayMode, duration: Int) {
         self.recordIdentifier = UUID().uuidString
         self.scoreObtained = score
-        self.gameModeType = mode == .uniform ? "Uniform Mode" : "Diverse Mode"
+        self.gameModeType = mode == .uniform ? "Harmonic Loop" : "Prismatic Run"
         self.timestamp = Date()
         self.durationInSeconds = duration
     }

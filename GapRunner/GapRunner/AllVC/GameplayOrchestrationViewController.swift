@@ -37,8 +37,12 @@ class GameplayOrchestrationViewController: UIViewController {
     var currentGapIndex = 0  // Track which gap should be filled next
     
     // Constants
-    let trackMovementDuration: TimeInterval = 12.0
     let tileAspectRatio: CGFloat = 1.0 / 1.385
+    
+    /// 动画持续时间 - 第一种模式（uniform）使用18秒，第二种模式使用12秒
+    var trackMovementDuration: TimeInterval {
+        return gameMode == .uniform ? 18.0 : 12.0
+    }
     
     init(gameMode: GameplayMode) {
         self.gameMode = gameMode
@@ -149,13 +153,13 @@ extension GameplayOrchestrationViewController {
             livesLabel.heightAnchor.constraint(equalToConstant: 40),
             
             progressLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressLabel.topAnchor.constraint(equalTo: returnButton.bottomAnchor, constant: 20),
+            progressLabel.topAnchor.constraint(equalTo: returnButton.bottomAnchor, constant: 12),
             progressLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 120),
             progressLabel.heightAnchor.constraint(equalToConstant: 36),
             
             upperTrackContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             upperTrackContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            upperTrackContainer.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: 30),
+            upperTrackContainer.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: 20),
             upperTrackContainer.heightAnchor.constraint(equalToConstant: containerHeight),
             
             lowerSelectionContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: sideMargin),
@@ -203,11 +207,25 @@ extension GameplayOrchestrationViewController {
         currentCatalogue = gameMode == .uniform ? 
             TileRepertoire.shared.retrieveRandomCategory() : .bamboo
         
-        // Generate sequence with gaps
+        // Generate sequence with gaps - 确保不连续超过2个空格
         let startValue = Int.random(in: 1...(9 - sequenceLength + 1))
-        var allPositions = Array(0..<sequenceLength)
-        allPositions.shuffle()
-        gapPositions = Array(allPositions.prefix(gapCount)).sorted()
+        var selectedGapPositions: [Int] = []
+        var availablePositions = Array(0..<sequenceLength)
+        
+        for _ in 0..<gapCount {
+            // 过滤掉会导致连续超过2个空格的位置
+            let validPositions = availablePositions.filter { pos in
+                let testPositions = (selectedGapPositions + [pos]).sorted()
+                return !hasMoreThanTwoConsecutiveGaps(testPositions)
+            }
+            
+            if let selectedPos = validPositions.randomElement() {
+                selectedGapPositions.append(selectedPos)
+                availablePositions.removeAll { $0 == selectedPos }
+            }
+        }
+        
+        gapPositions = selectedGapPositions.sorted()
         expectedAnswers = gapPositions.map { startValue + $0 }
         
         // Create tile views
@@ -262,93 +280,61 @@ extension GameplayOrchestrationViewController {
         }
     }
     
+    /// 检查位置数组中是否有连续超过2个的情况
+    func hasMoreThanTwoConsecutiveGaps(_ positions: [Int]) -> Bool {
+        guard positions.count >= 3 else { return false }
+        let sorted = positions.sorted()
+        for i in 0..<(sorted.count - 2) {
+            if sorted[i+1] == sorted[i] + 1 && sorted[i+2] == sorted[i] + 2 {
+                return true
+            }
+        }
+        return false
+    }
+    
     func populateLowerSelection() {
         let isPad = UIDevice.current.userInterfaceIdiom == .pad
         let padding: CGFloat = isPad ? 30 : 20
         let spacing: CGFloat = isPad ? 15 : 10
         
-        if gameMode == .uniform {
-            // 3x3 grid of same category
-            let rows = 3
-            let cols = 3
-            let tiles = TileRepertoire.shared.retrieveCollection(for: currentCatalogue)
-            
-            let availableWidth = lowerSelectionContainer.bounds.width - 2 * padding
-            let availableHeight = lowerSelectionContainer.bounds.height - 2 * padding
-            let maxTileWidth = (availableWidth - CGFloat(cols - 1) * spacing) / CGFloat(cols)
-            let maxTileHeight = (availableHeight - CGFloat(rows - 1) * spacing) / CGFloat(rows)
-            
-            // Calculate actual tile size based on aspect ratio
-            let tileHeight = min(maxTileWidth / tileAspectRatio, maxTileHeight)
-            let finalTileWidth = tileHeight * tileAspectRatio
-            
-            // Calculate total grid size
-            let totalGridWidth = CGFloat(cols) * finalTileWidth + CGFloat(cols - 1) * spacing
-            let totalGridHeight = CGFloat(rows) * tileHeight + CGFloat(rows - 1) * spacing
-            
-            // Calculate starting position to center the grid
-            let startX = (lowerSelectionContainer.bounds.width - totalGridWidth) / 2
-            let startY = (lowerSelectionContainer.bounds.height - totalGridHeight) / 2
-            
-            for row in 0..<rows {
-                for col in 0..<cols {
-                    let index = row * cols + col
-                    if index < tiles.count {
-                        let tile = tiles[index]
-                        let tileView = TileImageViewComponent(tile: tile)
-                        
-                        let x = startX + CGFloat(col) * (finalTileWidth + spacing)
-                        let y = startY + CGFloat(row) * (tileHeight + spacing)
-                        tileView.frame = CGRect(x: x, y: y, width: finalTileWidth, height: tileHeight)
-                        
-                        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTileSelection(_:)))
-                        tileView.addGestureRecognizer(tapGesture)
-                        
-                        lowerSelectionContainer.addSubview(tileView)
-                        lowerTileViews.append(tileView)
-                    }
-                }
-            }
-        } else {
-            // 5x6 grid of mixed categories
-            let rows = 5
-            let cols = 6
-            let allTiles = TileRepertoire.shared.retrieveAllTiles().shuffled()
-            
-            let availableWidth = lowerSelectionContainer.bounds.width - 2 * padding
-            let availableHeight = lowerSelectionContainer.bounds.height - 2 * padding
-            let maxTileWidth = (availableWidth - CGFloat(cols - 1) * spacing) / CGFloat(cols)
-            let maxTileHeight = (availableHeight - CGFloat(rows - 1) * spacing) / CGFloat(rows)
-            
-            // Calculate actual tile size based on aspect ratio
-            let tileHeight = min(maxTileWidth / tileAspectRatio, maxTileHeight)
-            let finalTileWidth = tileHeight * tileAspectRatio
-            
-            // Calculate total grid size
-            let totalGridWidth = CGFloat(cols) * finalTileWidth + CGFloat(cols - 1) * spacing
-            let totalGridHeight = CGFloat(rows) * tileHeight + CGFloat(rows - 1) * spacing
-            
-            // Calculate starting position to center the grid
-            let startX = (lowerSelectionContainer.bounds.width - totalGridWidth) / 2
-            let startY = (lowerSelectionContainer.bounds.height - totalGridHeight) / 2
-            
-            for row in 0..<rows {
-                for col in 0..<cols {
-                    let index = row * cols + col
-                    if index < allTiles.count {
-                        let tile = allTiles[index]
-                        let tileView = TileImageViewComponent(tile: tile)
-                        
-                        let x = startX + CGFloat(col) * (finalTileWidth + spacing)
-                        let y = startY + CGFloat(row) * (tileHeight + spacing)
-                        tileView.frame = CGRect(x: x, y: y, width: finalTileWidth, height: tileHeight)
-                        
-                        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTileSelection(_:)))
-                        tileView.addGestureRecognizer(tapGesture)
-                        
-                        lowerSelectionContainer.addSubview(tileView)
-                        lowerTileViews.append(tileView)
-                    }
+        // 两种模式都使用 5x6 网格，显示所有 27 张麻将
+        let rows = 5
+        let cols = 6
+        let allTiles = TileRepertoire.shared.retrieveAllTiles().shuffled()
+        
+        let availableWidth = lowerSelectionContainer.bounds.width - 2 * padding
+        let availableHeight = lowerSelectionContainer.bounds.height - 2 * padding
+        let maxTileWidth = (availableWidth - CGFloat(cols - 1) * spacing) / CGFloat(cols)
+        let maxTileHeight = (availableHeight - CGFloat(rows - 1) * spacing) / CGFloat(rows)
+        
+        // Calculate actual tile size based on aspect ratio
+        let tileHeight = min(maxTileWidth / tileAspectRatio, maxTileHeight)
+        let finalTileWidth = tileHeight * tileAspectRatio
+        
+        // Calculate total grid size
+        let totalGridWidth = CGFloat(cols) * finalTileWidth + CGFloat(cols - 1) * spacing
+        let totalGridHeight = CGFloat(rows) * tileHeight + CGFloat(rows - 1) * spacing
+        
+        // Calculate starting position to center the grid
+        let startX = (lowerSelectionContainer.bounds.width - totalGridWidth) / 2
+        let startY = (lowerSelectionContainer.bounds.height - totalGridHeight) / 2
+        
+        for row in 0..<rows {
+            for col in 0..<cols {
+                let index = row * cols + col
+                if index < allTiles.count {
+                    let tile = allTiles[index]
+                    let tileView = TileImageViewComponent(tile: tile)
+                    
+                    let x = startX + CGFloat(col) * (finalTileWidth + spacing)
+                    let y = startY + CGFloat(row) * (tileHeight + spacing)
+                    tileView.frame = CGRect(x: x, y: y, width: finalTileWidth, height: tileHeight)
+                    
+                    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTileSelection(_:)))
+                    tileView.addGestureRecognizer(tapGesture)
+                    
+                    lowerSelectionContainer.addSubview(tileView)
+                    lowerTileViews.append(tileView)
                 }
             }
         }
@@ -411,76 +397,55 @@ extension GameplayOrchestrationViewController {
         let selectedValue = tileView.tileEntity.numericalValue
         
         if let firstExpected = expectedAnswers.first, firstExpected == selectedValue {
-            // Correct answer - animate tile to fill the gap
-            guard currentGapIndex < gapViews.count else { return }
+            
+            // Correct answer - 直接填充空格
+            guard currentGapIndex < gapViews.count else {
+                return
+            }
             let targetGap = gapViews[currentGapIndex]
             
-            // Disable interaction during animation
-            lowerSelectionContainer.isUserInteractionEnabled = false
+           
             
-            // Create a copy of the tile to animate
-            let animatingTile = TileImageViewComponent(tile: tileView.tileEntity)
-            let startFrame = view.convert(tileView.frame, from: lowerSelectionContainer)
-            animatingTile.frame = startFrame
-            view.addSubview(animatingTile)
+            // 显示正确反馈
+            showCorrectFeedback()
             
-            // Hide original tile
-            tileView.alpha = 0
+            // 直接填充空格（无动画）
+            fillGap(targetGap, with: tileView.tileEntity)
             
-            // Calculate target position - convert targetGap's frame to view coordinates
-            // We need to convert from upperTrackContainer to the main view
-            let targetFrameInContainer = targetGap.frame
-            let targetFrame = view.convert(targetFrameInContainer, from: upperTrackContainer)
+            // Remove the tile from lower selection
+            tileView.removeFromSuperview()
+            if let index = self.lowerTileViews.firstIndex(of: tileView) {
+                self.lowerTileViews.remove(at: index)
+            }
             
-            // Animate tile to gap
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                animatingTile.frame = targetFrame
-            }) { [weak self] _ in
-                guard let self = self else { return }
-                
-                // Remove animating tile
-                animatingTile.removeFromSuperview()
-                
-                // Fill the gap with the tile
-                self.fillGap(targetGap, with: tileView.tileEntity)
-                
-                // Remove the tile from lower selection
-                tileView.removeFromSuperview()
-                if let index = self.lowerTileViews.firstIndex(of: tileView) {
-                    self.lowerTileViews.remove(at: index)
+            // Update game state
+            self.expectedAnswers.removeFirst()
+            self.currentGapIndex += 1
+            
+            self.currentScore += 10
+            self.updateScoreDisplay()
+            
+            if self.expectedAnswers.isEmpty {
+                // All gaps filled - complete round
+                // Check if animator is running before stopping it
+                if self.trackAnimator?.isRunning == true {
+                    self.trackAnimator?.stopAnimation(false)
+                    self.trackAnimator?.finishAnimation(at: .current)
                 }
                 
-                // Update game state
-                self.expectedAnswers.removeFirst()
-                self.currentGapIndex += 1
+                // Show round complete animation
+                self.showRoundCompleteAnimation()
                 
-                self.currentScore += 10
-                self.updateScoreDisplay()
-                
-                // Re-enable interaction
-                self.lowerSelectionContainer.isUserInteractionEnabled = true
-                
-                if self.expectedAnswers.isEmpty {
-                    // All gaps filled - complete round
-                    // Check if animator is running before stopping it
-                    if self.trackAnimator?.isRunning == true {
-                        self.trackAnimator?.stopAnimation(false)
-                        self.trackAnimator?.finishAnimation(at: .current)
-                    }
-                    
-                    // Show round complete animation
-                    self.showRoundCompleteAnimation()
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        self.initiateNewRound()
-                    }
-                } else {
-                    // Highlight next gap
-                    self.highlightCurrentGap()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.initiateNewRound()
                 }
+            } else {
+                // Highlight next gap
+                self.highlightCurrentGap()
             }
         } else {
-            // Wrong answer
+            // Wrong answer - 显示错误反馈
+            showWrongFeedback()
             tileView.animateIncorrectShake()
             remainingLives -= 1
             updateLivesDisplay()
@@ -492,22 +457,38 @@ extension GameplayOrchestrationViewController {
     }
     
     func fillGap(_ gapView: UIView, with tile: MahjongTileEntity) {
+        
         // Remove dashed border
         gapView.layer.sublayers?.first(where: { $0.name == "dashedBorder" })?.removeFromSuperlayer()
         
         // Change background
         gapView.backgroundColor = .clear
         
+        // 移除所有现有子视图
+        gapView.subviews.forEach { $0.removeFromSuperview() }
+        
+        // 确保bounds正确
+        gapView.layoutIfNeeded()
+        
         // Add tile image
         let imageView = TileImageViewComponent(tile: tile)
-        imageView.frame = gapView.bounds
+        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]  // 自动调整大小
+        imageView.frame = CGRect(x: 0, y: 0, width: gapView.bounds.width, height: gapView.bounds.height)
         imageView.isUserInteractionEnabled = false
+        imageView.clipsToBounds = true
         gapView.addSubview(imageView)
         
-        // Add a subtle scale animation
-        imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: .curveEaseOut) {
-            imageView.transform = .identity
+        // 强制立即布局更新
+        imageView.layoutIfNeeded()
+        gapView.setNeedsLayout()
+        gapView.layoutIfNeeded()
+        
+      
+        
+        // 验证麻将确实在视图层级中
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let first = gapView.subviews.first {
+            }
         }
         
         // Show score animation
@@ -754,6 +735,112 @@ extension GameplayOrchestrationViewController {
     
     func updateProgressDisplay() {
         progressLabel.text = "Round \(completedRounds)"
+    }
+    
+    /// 显示选择正确的反馈动画
+    func showCorrectFeedback() {
+        let feedbackView = createFeedbackView(
+            icon: "checkmark.circle.fill",
+            text: "Correct!",
+            color: .systemGreen
+        )
+        animateFeedback(feedbackView)
+    }
+    
+    /// 显示选择错误的反馈动画
+    func showWrongFeedback() {
+        let feedbackView = createFeedbackView(
+            icon: "xmark.circle.fill",
+            text: "Wrong!",
+            color: .systemRed
+        )
+        animateFeedback(feedbackView)
+    }
+    
+    /// 创建反馈视图
+    func createFeedbackView(icon: String, text: String, color: UIColor) -> UIView {
+        let container = UIView()
+        container.backgroundColor = color.withAlphaComponent(0.95)
+        container.layer.cornerRadius = 25
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOffset = CGSize(width: 0, height: 4)
+        container.layer.shadowRadius = 10
+        container.layer.shadowOpacity = 0.5
+        
+        let iconConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .bold)
+        let iconView = UIImageView(image: UIImage(systemName: icon, withConfiguration: iconConfig))
+        iconView.tintColor = .white
+        iconView.contentMode = .scaleAspectFit
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        container.addSubview(iconView)
+        container.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            iconView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            iconView.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
+            iconView.widthAnchor.constraint(equalToConstant: 50),
+            iconView.heightAnchor.constraint(equalToConstant: 50),
+            
+            label.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            label.topAnchor.constraint(equalTo: iconView.bottomAnchor, constant: 12),
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+            label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20)
+        ])
+        
+        return container
+    }
+    
+    /// 执行反馈动画
+    func animateFeedback(_ feedbackView: UIView) {
+        feedbackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(feedbackView)
+        
+        NSLayoutConstraint.activate([
+            feedbackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            feedbackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            feedbackView.widthAnchor.constraint(equalToConstant: 200),
+            feedbackView.heightAnchor.constraint(equalToConstant: 150)
+        ])
+        
+        // 初始状态
+        feedbackView.alpha = 0
+        feedbackView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        
+        // 动画序列
+        UIView.animateKeyframes(withDuration: 0.8, delay: 0, options: [], animations: {
+            // 弹出
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.3) {
+                feedbackView.alpha = 1
+                feedbackView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }
+            
+            // 回弹
+            UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.2) {
+                feedbackView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+            
+            // 停留
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.2) {
+                // 保持显示
+            }
+            
+            // 消失
+            UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
+                feedbackView.alpha = 0
+                feedbackView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }
+        }) { _ in
+            feedbackView.removeFromSuperview()
+        }
     }
     
     @objc func dismissWithConfirmation() {

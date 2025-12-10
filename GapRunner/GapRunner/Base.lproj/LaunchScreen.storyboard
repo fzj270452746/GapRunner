@@ -17,27 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="runnerImage" translatesAutoresizingMaskIntoConstraints="NO" id="J97-N8-sOq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="runnerImage" translatesAutoresizingMaskIntoConstraints="NO" id="oUM-aL-TyP">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="J97-N8-sOq" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="9RA-8q-6Nh"/>
-                            <constraint firstItem="J97-N8-sOq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GUe-vC-LfL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J97-N8-sOq" secondAttribute="trailing" id="hsP-dg-0GH"/>
-                            <constraint firstAttribute="top" secondItem="J97-N8-sOq" secondAttribute="top" id="uvu-bb-Mib"/>
+                            <constraint firstAttribute="top" secondItem="oUM-aL-TyP" secondAttribute="top" id="IVC-Wz-cDb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oUM-aL-TyP" secondAttribute="trailing" id="g0z-jd-ZXI"/>
+                            <constraint firstItem="oUM-aL-TyP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mnG-td-Yco"/>
+                            <constraint firstItem="oUM-aL-TyP" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="rrv-Sz-BXo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="Ze5-6b-2t3" id="diq-i1-ZaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="runnerImage" width="1242" height="1863"/>
+        <image name="runnerImage" width="2000" height="3000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

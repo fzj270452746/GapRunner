@@ -7,43 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28379B772EE83F5000985B34 /* AchievementRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */; };
-		28379B782EE83F5000985B34 /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */; };
-		28379B792EE83F5000985B34 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B732EE83F5000985B34 /* InstructionsViewController.swift */; };
-		28379B7A2EE83F5000985B34 /* AuxiliaryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */; };
-		28379B7B2EE83F5000985B34 /* GapRunnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B712EE83F5000985B34 /* GapRunnerModel.swift */; };
-		28379B7C2EE83F5000985B34 /* GameplayOrchestrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */; };
-		28379B7D2EE83F5000985B34 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28379B6F2EE83F5000985B34 /* EntranceViewController.swift */; };
-		28379C122EE850D600985B34 /* GRoseno.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28379C112EE850D600985B34 /* GRoseno.xcframework */; };
-		2C9E12CC42B72C5FBD51E06D /* Pods_GapRunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C5662D49D9C71569586623 /* Pods_GapRunner.framework */; };
+		28379CBC2EE9294700985B34 /* GRoseno.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28379CBB2EE9294700985B34 /* GRoseno.xcframework */; };
+		3AF6CC4D2EEB6C9D4C3487E8 /* Pods_GapRunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC45F581288540CD6568C7D6 /* Pods_GapRunner.framework */; };
+		FEDACDFF2EE9170800BA1B77 /* GapRunnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF92EE9170800BA1B77 /* GapRunnerModel.swift */; };
+		FEDACE002EE9170800BA1B77 /* FluxCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF72EE9170800BA1B77 /* FluxCarouselViewController.swift */; };
+		FEDACE012EE9170800BA1B77 /* AchievementRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDEF2EE9170800BA1B77 /* AchievementRecordsViewController.swift */; };
+		FEDACE022EE9170800BA1B77 /* ArcadeDialectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF12EE9170800BA1B77 /* ArcadeDialectViewController.swift */; };
+		FEDACE032EE9170800BA1B77 /* AtlasPortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF22EE9170800BA1B77 /* AtlasPortalViewController.swift */; };
+		FEDACE042EE9170800BA1B77 /* ChronicleVaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF52EE9170800BA1B77 /* ChronicleVaultViewController.swift */; };
+		FEDACE052EE9170800BA1B77 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF62EE9170800BA1B77 /* EntranceViewController.swift */; };
+		FEDACE062EE9170800BA1B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF02EE9170800BA1B77 /* AppDelegate.swift */; };
+		FEDACE072EE9170800BA1B77 /* HeptagramLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDFA2EE9170800BA1B77 /* HeptagramLedger.swift */; };
+		FEDACE082EE9170800BA1B77 /* ChromaticToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF42EE9170800BA1B77 /* ChromaticToolkit.swift */; };
+		FEDACE092EE9170800BA1B77 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDFB2EE9170800BA1B77 /* InstructionsViewController.swift */; };
+		FEDACE0A2EE9170800BA1B77 /* AuxiliaryUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF32EE9170800BA1B77 /* AuxiliaryUtilities.swift */; };
+		FEDACE0B2EE9170800BA1B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDFE2EE9170800BA1B77 /* SceneDelegate.swift */; };
+		FEDACE0C2EE9170800BA1B77 /* GameplayOrchestrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDF82EE9170800BA1B77 /* GameplayOrchestrationViewController.swift */; };
+		FEDACE0D2EE9170800BA1B77 /* LoreCodexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDFC2EE9170800BA1B77 /* LoreCodexViewController.swift */; };
+		FEDACE0E2EE9170800BA1B77 /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDACDFD2EE9170800BA1B77 /* ModeSelectionViewController.swift */; };
 		FEE23BAB2ED9F3B700432CA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */; };
 		FEE23BAD2ED9F3B700432CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA42ED9F3B700432CA8 /* LaunchScreen.storyboard */; };
 		FEE23BAE2ED9F3B700432CA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEE23BA62ED9F3B700432CA8 /* Main.storyboard */; };
 		FEE23BB02ED9F3B700432CA8 /* GapRunner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BA12ED9F3B700432CA8 /* GapRunner.xcdatamodeld */; };
-		FEE23BBE2EDACEE500432CA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */; };
-		FEE23BC42EDACEE500432CA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRecordsViewController.swift; sourceTree = "<group>"; };
-		28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxiliaryUtilities.swift; sourceTree = "<group>"; };
-		28379B6F2EE83F5000985B34 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
-		28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayOrchestrationViewController.swift; sourceTree = "<group>"; };
-		28379B712EE83F5000985B34 /* GapRunnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapRunnerModel.swift; sourceTree = "<group>"; };
-		28379B732EE83F5000985B34 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
-		28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
-		28379C112EE850D600985B34 /* GRoseno.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GRoseno.xcframework; sourceTree = "<group>"; };
-		4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.debug.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.debug.xcconfig"; sourceTree = "<group>"; };
-		64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.release.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.release.xcconfig"; sourceTree = "<group>"; };
-		84C5662D49D9C71569586623 /* Pods_GapRunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapRunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C54C43D64EA7B39B1193FDB /* Pods-GapRunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.release.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.release.xcconfig"; sourceTree = "<group>"; };
+		28379CBB2EE9294700985B34 /* GRoseno.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GRoseno.xcframework; sourceTree = "<group>"; };
+		CC45F581288540CD6568C7D6 /* Pods_GapRunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GapRunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEFC52F3AA5CFE98C45C40C /* Pods-GapRunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GapRunner.debug.xcconfig"; path = "Target Support Files/Pods-GapRunner/Pods-GapRunner.debug.xcconfig"; sourceTree = "<group>"; };
+		FEDACDEF2EE9170800BA1B77 /* AchievementRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRecordsViewController.swift; sourceTree = "<group>"; };
+		FEDACDF02EE9170800BA1B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEDACDF12EE9170800BA1B77 /* ArcadeDialectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeDialectViewController.swift; sourceTree = "<group>"; };
+		FEDACDF22EE9170800BA1B77 /* AtlasPortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlasPortalViewController.swift; sourceTree = "<group>"; };
+		FEDACDF32EE9170800BA1B77 /* AuxiliaryUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxiliaryUtilities.swift; sourceTree = "<group>"; };
+		FEDACDF42EE9170800BA1B77 /* ChromaticToolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaticToolkit.swift; sourceTree = "<group>"; };
+		FEDACDF52EE9170800BA1B77 /* ChronicleVaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronicleVaultViewController.swift; sourceTree = "<group>"; };
+		FEDACDF62EE9170800BA1B77 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
+		FEDACDF72EE9170800BA1B77 /* FluxCarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxCarouselViewController.swift; sourceTree = "<group>"; };
+		FEDACDF82EE9170800BA1B77 /* GameplayOrchestrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayOrchestrationViewController.swift; sourceTree = "<group>"; };
+		FEDACDF92EE9170800BA1B77 /* GapRunnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GapRunnerModel.swift; sourceTree = "<group>"; };
+		FEDACDFA2EE9170800BA1B77 /* HeptagramLedger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeptagramLedger.swift; sourceTree = "<group>"; };
+		FEDACDFB2EE9170800BA1B77 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		FEDACDFC2EE9170800BA1B77 /* LoreCodexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoreCodexViewController.swift; sourceTree = "<group>"; };
+		FEDACDFD2EE9170800BA1B77 /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		FEDACDFE2EE9170800BA1B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FEE23B842ED9F3AB00432CA8 /* GapRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GapRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEE23BA22ED9F3B700432CA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEE23BA32ED9F3B700432CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE23BA52ED9F3B700432CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEE23BAA2ED9F3B700432CA8 /* GapRunner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GapRunner.xcdatamodel; sourceTree = "<group>"; };
-		FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,71 +65,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C9E12CC42B72C5FBD51E06D /* Pods_GapRunner.framework in Frameworks */,
-				28379C122EE850D600985B34 /* GRoseno.xcframework in Frameworks */,
+				3AF6CC4D2EEB6C9D4C3487E8 /* Pods_GapRunner.framework in Frameworks */,
+				28379CBC2EE9294700985B34 /* GRoseno.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E3E1A71A0ED011ACD2241FF /* Pods */ = {
+		6CD41F71B04933053E5B5E00 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */,
-				64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */,
+				CFEFC52F3AA5CFE98C45C40C /* Pods-GapRunner.debug.xcconfig */,
+				1C54C43D64EA7B39B1193FDB /* Pods-GapRunner.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		11CE663F7D3B637B1E423C76 /* Frameworks */ = {
+		AD1FC649F6A7EBCA8B9E24CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84C5662D49D9C71569586623 /* Pods_GapRunner.framework */,
+				CC45F581288540CD6568C7D6 /* Pods_GapRunner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		28379B6C2EE83F5000985B34 /* Achieve */ = {
+		FEDACE142EE9271E00BA1B77 /* AllVC */ = {
 			isa = PBXGroup;
 			children = (
-				28379B6B2EE83F5000985B34 /* AchievementRecordsViewController.swift */,
+				FEDACDEF2EE9170800BA1B77 /* AchievementRecordsViewController.swift */,
+				FEDACDF12EE9170800BA1B77 /* ArcadeDialectViewController.swift */,
+				FEDACDF22EE9170800BA1B77 /* AtlasPortalViewController.swift */,
+				FEDACDF52EE9170800BA1B77 /* ChronicleVaultViewController.swift */,
+				FEDACDF62EE9170800BA1B77 /* EntranceViewController.swift */,
+				FEDACDF72EE9170800BA1B77 /* FluxCarouselViewController.swift */,
+				FEDACDF82EE9170800BA1B77 /* GameplayOrchestrationViewController.swift */,
+				FEDACDFB2EE9170800BA1B77 /* InstructionsViewController.swift */,
+				FEDACDFC2EE9170800BA1B77 /* LoreCodexViewController.swift */,
+				FEDACDFD2EE9170800BA1B77 /* ModeSelectionViewController.swift */,
 			);
-			path = Achieve;
+			path = AllVC;
 			sourceTree = "<group>";
 		};
-		28379B6E2EE83F5000985B34 /* Aux */ = {
+		FEDACE152EE9273800BA1B77 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				28379B6D2EE83F5000985B34 /* AuxiliaryUtilities.swift */,
+				FEDACDF32EE9170800BA1B77 /* AuxiliaryUtilities.swift */,
+				FEDACDF42EE9170800BA1B77 /* ChromaticToolkit.swift */,
+				FEDACDF92EE9170800BA1B77 /* GapRunnerModel.swift */,
+				FEDACDFA2EE9170800BA1B77 /* HeptagramLedger.swift */,
 			);
-			path = Aux;
-			sourceTree = "<group>";
-		};
-		28379B722EE83F5000985B34 /* ForGame */ = {
-			isa = PBXGroup;
-			children = (
-				28379B6F2EE83F5000985B34 /* EntranceViewController.swift */,
-				28379B702EE83F5000985B34 /* GameplayOrchestrationViewController.swift */,
-				28379B712EE83F5000985B34 /* GapRunnerModel.swift */,
-			);
-			path = ForGame;
-			sourceTree = "<group>";
-		};
-		28379B742EE83F5000985B34 /* InstructionsVC */ = {
-			isa = PBXGroup;
-			children = (
-				28379B732EE83F5000985B34 /* InstructionsViewController.swift */,
-			);
-			path = InstructionsVC;
-			sourceTree = "<group>";
-		};
-		28379B762EE83F5000985B34 /* ModelSelect */ = {
-			isa = PBXGroup;
-			children = (
-				28379B752EE83F5000985B34 /* ModeSelectionViewController.swift */,
-			);
-			path = ModelSelect;
+			path = Other;
 			sourceTree = "<group>";
 		};
 		FEE23B7B2ED9F3AB00432CA8 = {
@@ -123,8 +123,8 @@
 			children = (
 				FEE23BA92ED9F3B700432CA8 /* GapRunner */,
 				FEE23B852ED9F3AB00432CA8 /* Products */,
-				0E3E1A71A0ED011ACD2241FF /* Pods */,
-				11CE663F7D3B637B1E423C76 /* Frameworks */,
+				6CD41F71B04933053E5B5E00 /* Pods */,
+				AD1FC649F6A7EBCA8B9E24CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,19 +139,16 @@
 		FEE23BA92ED9F3B700432CA8 /* GapRunner */ = {
 			isa = PBXGroup;
 			children = (
-				FEE23BB62EDACEE500432CA8 /* AppDelegate.swift */,
-				FEE23BBD2EDACEE500432CA8 /* SceneDelegate.swift */,
-				28379C112EE850D600985B34 /* GRoseno.xcframework */,
-				28379B6C2EE83F5000985B34 /* Achieve */,
-				28379B6E2EE83F5000985B34 /* Aux */,
-				28379B722EE83F5000985B34 /* ForGame */,
-				28379B742EE83F5000985B34 /* InstructionsVC */,
-				28379B762EE83F5000985B34 /* ModelSelect */,
 				FEE23BA02ED9F3B700432CA8 /* Assets.xcassets */,
 				FEE23BA12ED9F3B700432CA8 /* GapRunner.xcdatamodeld */,
+				28379CBB2EE9294700985B34 /* GRoseno.xcframework */,
 				FEE23BA22ED9F3B700432CA8 /* Info.plist */,
 				FEE23BA42ED9F3B700432CA8 /* LaunchScreen.storyboard */,
 				FEE23BA62ED9F3B700432CA8 /* Main.storyboard */,
+				FEDACDF02EE9170800BA1B77 /* AppDelegate.swift */,
+				FEDACDFE2EE9170800BA1B77 /* SceneDelegate.swift */,
+				FEDACE142EE9271E00BA1B77 /* AllVC */,
+				FEDACE152EE9273800BA1B77 /* Other */,
 			);
 			path = GapRunner;
 			sourceTree = "<group>";
@@ -163,11 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEE23B9A2ED9F3AD00432CA8 /* Build configuration list for PBXNativeTarget "GapRunner" */;
 			buildPhases = (
-				4D9B435ECA945050AE28F80B /* [CP] Check Pods Manifest.lock */,
+				54266304F32ED3720B94DA8C /* [CP] Check Pods Manifest.lock */,
 				FEE23B802ED9F3AB00432CA8 /* Sources */,
 				FEE23B812ED9F3AB00432CA8 /* Frameworks */,
 				FEE23B822ED9F3AB00432CA8 /* Resources */,
-				62C26BBA4D2B6BAFE4747175 /* [CP] Embed Pods Frameworks */,
+				BDC1B28D1EB8FCECA7D6D28A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,7 +224,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D9B435ECA945050AE28F80B /* [CP] Check Pods Manifest.lock */ = {
+		54266304F32ED3720B94DA8C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,7 +246,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62C26BBA4D2B6BAFE4747175 /* [CP] Embed Pods Frameworks */ = {
+		BDC1B28D1EB8FCECA7D6D28A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,16 +274,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDACDFF2EE9170800BA1B77 /* GapRunnerModel.swift in Sources */,
+				FEDACE002EE9170800BA1B77 /* FluxCarouselViewController.swift in Sources */,
+				FEDACE012EE9170800BA1B77 /* AchievementRecordsViewController.swift in Sources */,
+				FEDACE022EE9170800BA1B77 /* ArcadeDialectViewController.swift in Sources */,
+				FEDACE032EE9170800BA1B77 /* AtlasPortalViewController.swift in Sources */,
+				FEDACE042EE9170800BA1B77 /* ChronicleVaultViewController.swift in Sources */,
+				FEDACE052EE9170800BA1B77 /* EntranceViewController.swift in Sources */,
+				FEDACE062EE9170800BA1B77 /* AppDelegate.swift in Sources */,
+				FEDACE072EE9170800BA1B77 /* HeptagramLedger.swift in Sources */,
+				FEDACE082EE9170800BA1B77 /* ChromaticToolkit.swift in Sources */,
+				FEDACE092EE9170800BA1B77 /* InstructionsViewController.swift in Sources */,
+				FEDACE0A2EE9170800BA1B77 /* AuxiliaryUtilities.swift in Sources */,
+				FEDACE0B2EE9170800BA1B77 /* SceneDelegate.swift in Sources */,
+				FEDACE0C2EE9170800BA1B77 /* GameplayOrchestrationViewController.swift in Sources */,
+				FEDACE0D2EE9170800BA1B77 /* LoreCodexViewController.swift in Sources */,
+				FEDACE0E2EE9170800BA1B77 /* ModeSelectionViewController.swift in Sources */,
 				FEE23BB02ED9F3B700432CA8 /* GapRunner.xcdatamodeld in Sources */,
-				FEE23BBE2EDACEE500432CA8 /* AppDelegate.swift in Sources */,
-				28379B772EE83F5000985B34 /* AchievementRecordsViewController.swift in Sources */,
-				28379B782EE83F5000985B34 /* ModeSelectionViewController.swift in Sources */,
-				28379B792EE83F5000985B34 /* InstructionsViewController.swift in Sources */,
-				28379B7A2EE83F5000985B34 /* AuxiliaryUtilities.swift in Sources */,
-				28379B7B2EE83F5000985B34 /* GapRunnerModel.swift in Sources */,
-				28379B7C2EE83F5000985B34 /* GameplayOrchestrationViewController.swift in Sources */,
-				28379B7D2EE83F5000985B34 /* EntranceViewController.swift in Sources */,
-				FEE23BC42EDACEE500432CA8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +318,7 @@
 /* Begin XCBuildConfiguration section */
 		FEE23B9B2ED9F3AD00432CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B7141B635766BB604E5CE3F /* Pods-GapRunner.debug.xcconfig */;
+			baseConfigurationReference = CFEFC52F3AA5CFE98C45C40C /* Pods-GapRunner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GapRunner.GR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -354,7 +358,7 @@
 		};
 		FEE23B9C2ED9F3AD00432CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64439261C9EAFCB75EFFCFC4 /* Pods-GapRunner.release.xcconfig */;
+			baseConfigurationReference = 1C54C43D64EA7B39B1193FDB /* Pods-GapRunner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GapRunner.GR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

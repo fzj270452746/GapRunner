@@ -26,16 +26,14 @@ class ModeSelectionViewController: UIViewController {
         // Create mode cards
         let uniformCard = createModeCard(
             icon: "square.grid.3x3.fill",
-            title: "Uniform Mode",
-            description: "Match tiles of the same category to fill the gaps",
+            title: "Harmonic Loop",
             gradientColors: [UIColor.systemIndigo, UIColor.systemPurple],
             action: #selector(selectUniformMode)
         )
         
         let diverseCard = createModeCard(
             icon: "square.grid.3x3.topleft.filled",
-            title: "Diverse Mode",
-            description: "Match tiles of any category by their numerical values",
+            title: "Prismatic Run",
             gradientColors: [UIColor.systemOrange, UIColor.systemPink],
             action: #selector(selectDiverseMode)
         )
@@ -48,7 +46,7 @@ class ModeSelectionViewController: UIViewController {
         view.addSubview(modesStackView)
     }
     
-    func createModeCard(icon: String, title: String, description: String, gradientColors: [UIColor], action: Selector) -> UIView {
+    func createModeCard(icon: String, title: String, gradientColors: [UIColor], action: Selector) -> UIView {
         // Container for shadow
         let containerView = UIView()
         containerView.layer.shadowColor = UIColor.black.cgColor
@@ -80,15 +78,6 @@ class ModeSelectionViewController: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(titleLabel)
         
-        // Description
-        let descLabel = UILabel()
-        descLabel.text = description
-        descLabel.font = UIFont.systemFont(ofSize: 15)
-        descLabel.textColor = UIColor.white.withAlphaComponent(0.95)
-        descLabel.numberOfLines = 0
-        descLabel.translatesAutoresizingMaskIntoConstraints = false
-        cardView.addSubview(descLabel)
-        
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: containerView.topAnchor),
             cardView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
@@ -101,13 +90,8 @@ class ModeSelectionViewController: UIViewController {
             iconImageView.heightAnchor.constraint(equalToConstant: 60),
             
             titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 25),
-            titleLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20),
-            
-            descLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 20),
-            descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            descLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20),
-            descLabel.bottomAnchor.constraint(lessThanOrEqualTo: cardView.bottomAnchor, constant: -25)
+            titleLabel.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -20)
         ])
         
         // Add tap gesture
